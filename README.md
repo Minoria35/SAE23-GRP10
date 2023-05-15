@@ -2,3 +2,4 @@
 
 ## Contributors
 - Antoine DAVID
+- Victor COCARD
