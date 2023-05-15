@@ -1,3 +1,3 @@
 # SAE23-Website
-Benjamin2
-bonjour
+## Contributors
+- Victor Cocard
