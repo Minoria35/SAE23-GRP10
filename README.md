@@ -1,5 +1,7 @@
 # SAE23-Website
-Benjamin2
-bonjour
-## Sous-Titre
-Antoine
+
+## Contributors
+- Antoine DAVID
+- Victor COCARD
+- Benjamin FAURE
+- Tanguy DANION
