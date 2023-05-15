@@ -1,3 +1,12 @@
 # SAE23-Website
-Benjamin
-bonjour
+
+## Contributors
+
+### Development team
+
+- Antoine DAVID
+- Victor COCARD
+
+### Reviewers
+
+- @frmenguy
