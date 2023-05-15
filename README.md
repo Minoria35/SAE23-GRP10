@@ -2,6 +2,3 @@
 
 ## Contributors
 - Antoine DAVID
-- Victor COCARD
-- Benjamin FAURE
-- Tanguy DANION
