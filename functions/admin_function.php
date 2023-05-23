@@ -19,7 +19,7 @@
             echo '<tr>
                     <td>' . $username . '</td>
                     <td>' . $user['password'] . '</td>
-                    <td>' . $user['role'] . '</td>
+                    <td>' . " ", $user['role'] . '</td>
                     <td>
                         <button type="button" class="btn btn-primary edit-user-btn" data-bs-toggle="modal" data-bs-target="#edit-user-modal" data-username="' . $username . '">Modifier</button>
                         <a href="../functions/admin_function/delete_user.php?username=' . $username . '">Supprimer</a>

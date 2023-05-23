@@ -31,12 +31,51 @@
                     else {
                         //echo $_SESSION['username'] . ' (' . $_SESSION['role'] . ')';
                         echo '<div class="connexion-header text-right">
-                        <a href="../logon-logout/connexion.php" class="btn btn-outline-dark btn-sm">Se connecter</a>';
-                    }
-                    echo '</div>
-                </div>
-            </div>
-        ';
+                        <button class="btn btn-outline-dark btn-sm edit-cxs-user" data-bs-toggle="modal" data-bs-target="#edit-cxs-modal">Se connecter</button>';
+
+                        echo '
+                            <div class="modal fade" id="edit-cxs-modal" aria-labelledby="editModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editModalLabel">Connexion de l\'utilisateur</h5>
+                                </div>
+                                <form action="../logon-logout/connexion.php" method="post">
+                                    <div class="form-group">
+                                        <label for="username">Nom d\'utilisateur</label>
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Nom d\'utilisateur">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Mot de passe</label>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
+                                    </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                            </div>';
+
+                            echo '
+                            <script>
+                                const editUserBtns = document.querySelectorAll(\'.edit-user-btn\');
+                                const usernameInput = document.getElementById(\'username\');
+                            
+                                editUserBtns.forEach(btn => {
+                                    btn.addEventListener(\'click\', () => {
+                                        const username = btn.getAttribute(\'data-username\');
+                                        usernameInput.value = username;
+                                    });
+                                });
+                            </script>
+                            ';
+
+                        }
+                        echo '</div>
+                            </div>
+                        </div>';
     }
 
 
@@ -111,22 +150,6 @@
                                 <li><a href="#">Qui sommes-nous ?</a></li>
                                 <li><a href="#">Nous contacter</a></li>
                                 <li><a href="#">Mentions légales</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4">
-                            <h4>Mon compte</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Mes commandes</a></li>
-                                <li><a href="#">Mes informations personnelles</a></li>
-                                <li><a href="#">Mes adresses</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4">
-                            <h4>Mon panier</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Mon panier</a></li>
-                                <li><a href="#">Mes favoris</a></li>
-                                <li><a href="#">Mes bons de réduction</a></li>
                             </ul>
                         </div>
                     </div>
