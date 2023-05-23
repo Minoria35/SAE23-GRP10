@@ -94,7 +94,7 @@ function pagefooter() {
   $date = date("d/m/Y H:i:s");
   $ip = $_SERVER['REMOTE_ADDR'];
   $port = $_SERVER['REMOTE_PORT'];
-  $auteur = "Victor Cocard";
+  $auteur = "Groupe 10 SAE23";
   $email = "victorcocard@gmail.com";
   $groupe = "FI1G1";
   $annee = date("Y");
