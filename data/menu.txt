@@ -1,0 +1,2 @@
+/;Accueil;index.php;none
+/admin_page/;Admin;admin.php;admin
