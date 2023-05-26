@@ -22,7 +22,7 @@
                     <td>' . $user['role'] . '</td>
                     <td>
                         <button type="button" class="btn btn-primary edit-user-btn" data-bs-toggle="modal" data-bs-target="#edit-user-modal" data-username="' . $username . '">Modifier</button>
-                        <a href="../functions/admin_function/delete_user.php?username=' . $username . '">Supprimer</a>
+                        <a href="../functions/traitement_function/delete_user.php?username=' . $username . '">Supprimer</a>
                     </td>
                 </tr>';
         }
@@ -38,7 +38,7 @@
               <div class="modal-header">
                 <h5 class="modal-title" id="editModalLabel">Modifier l\'utilisateur</h5>
               </div>
-              <form action="../functions/admin_function/edituser_traitement.php" method="post">
+              <form action="../functions/traitement_function/edituser_traitement.php" method="post">
                 <div class="modal-body">
                   <div class="form-group">
                     <label for="username">Nom d\'utilisateur</label>
@@ -59,7 +59,9 @@
                   <div class="form-group">
                     <label for="role">Rôle</label>
                     <select class="form-control" id="role" name="role">
-                      <option value="user">User</option>
+                      <option value="salarie">Salarié</option>
+                      <option value="managers">Managers</option>
+                      <option value="direction">Direction</option>
                       <option value="admin">Admin</option>
                     </select>
                   </div>

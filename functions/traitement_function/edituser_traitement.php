@@ -37,6 +37,6 @@
     $json_updated = json_encode($updated_users, JSON_PRETTY_PRINT);
     file_put_contents('../../data/users.json', $json_updated);
 
-    header('Location: ../../admin_page/admin.php');
+    header('Location: ../../Intranet/admin.php');
 
 ?>

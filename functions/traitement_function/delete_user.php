@@ -12,5 +12,5 @@
 
     file_put_contents('../../data/users.json', json_encode($updated_users));
 
-    header('Location: ..\..\admin_page\admin.php');
+    header('Location: ..\..\Intranet\admin.php');
 ?>

@@ -1,2 +1,6 @@
 /;Accueil;index.php;none
-/admin_page/;Admin;admin.php;admin
+/;Qui sommes-nous;qui_sommes_nous.php;none
+/;Histoire;histoire.php;none
+/;Activités;activites.php;none
+/;Partenaires;partenaires.php;none
+/Intranet/;Admin;admin.php;admin

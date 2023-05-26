@@ -26,7 +26,7 @@
                     if(isset($_SESSION['username']) && isset($_SESSION['role'])){
                         //echo $_SESSION['username'] . ' (' . $_SESSION['role'] . ')';
                         echo '<div class="connexion-header text-right">
-                        <a href="../logon-logout/deconnexion.php" class="btn btn-outline-dark btn-sm">Se déconnecter</a>';
+                        <a href="../functions/traitement_function/deconnexion.php" class="btn btn-outline-dark btn-sm">Se déconnecter</a>';
                     }
                     else {
                         //echo $_SESSION['username'] . ' (' . $_SESSION['role'] . ')';
@@ -40,7 +40,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="editModalLabel">Connexion de l\'utilisateur</h5>
                                 </div>
-                                <form action="../logon-logout/connexion.php" method="post">
+                                <form action="../functions/traitement_function/connexion.php" method="post">
                                     <div class="form-group">
                                         <label for="username">Nom d\'utilisateur</label>
                                         <input type="text" class="form-control" id="username" name="username" placeholder="Nom d\'utilisateur">
@@ -110,7 +110,7 @@
                         echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
                         ';
                     }
-                }elseif($role == "user" && isset($_SESSION['role']) && $_SESSION['role'] == "user"){
+                }elseif($role == "user" && isset($_SESSION['role']) && $_SESSION['role'] == "salarie"){
                     if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
                     ';} 
                     else {
