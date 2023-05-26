@@ -1,0 +1,11 @@
+#scrollUp{
+
+    display: none;
+    background-color: transparent;
+    position: fixed;
+    bottom : 10px;
+    right: 20px;
+    opacity: 0.8;
+    border-radius: 100%;
+    border-color: transparent;
+}

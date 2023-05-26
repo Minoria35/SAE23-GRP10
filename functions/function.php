@@ -10,6 +10,8 @@
             <title>'.$title.'</title>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="../js/to_top.js"></script>
+            <link rel="stylesheet" href="../css/to_top.css">
         </head>
         <body>';
     }
@@ -141,6 +143,9 @@
 
     function footer(){
         echo '
+            <div>
+                <button onclick="scrollUp()" id="scrollUp"><img src="../images/to_top.png" width="45"/></button> 
+            </div>
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">

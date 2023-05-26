@@ -1,6 +1,6 @@
 <?php
-    include '..\functions\function.php';
+    include '../../functions/function.php';
 
     deconnexion();
-    header('Location: ../index.php');
+    header('Location: ../../index.php');
 ?>
