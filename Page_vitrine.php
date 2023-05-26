@@ -1,14 +1,20 @@
-<?php
-include 'functions.php';
+<!DOCTYPE html>
+<html>
+<head>
+<?php include 'functions.php';
 $titre = "Plaprêt";
 $pageactive = "";
 setup("Page d'accueil");
 pageheader($titre);
 pagenavbar($pageactive);
 ?>
-<div class="container">
-  <h2>Notre projet</h2>
-  <h3>Qui sommes-nous ?</h3>
+</head>
+<body>
+<br>
+  <h2 id="texteAGlisser">Présentation de l'entreprise</h2>
+  <br>
+<div class=container>
+  <h3 id="texteAGlisser">Qui sommes-nous ?</h3>
   <p>
 
 Nous sommes une jeune entreprise spécialisée dans les bons plats à simplement réchauffer au micro-ondes qui ont simplement voulu vivre de leur passion, l'élaboration de plats goûtus, de qualité, en en faisant profiter les papilles de chacun d'entre vous qui nous ferait confiance. Retrouvez sur notre site différentes pages permettant d'en connaître plus sur l'entreprise.</p>
@@ -36,9 +42,48 @@ Chez Plaprêt, nous nous engageons à faire don d'au moins 500 plats prêts à l
 <p>Nous sommes fiers de travailler continuellement avec notre partenaire FD, spécialiste dans l'industrialisation éco-responsable. Ce parteneriat représente un enjeu majeur dans le développement de notre entreprise.</p>
 <br><br><br><br>
 </div>
+
 <?php    
     //Créé le fichier users.json avec les 4 premiers utilisateurs définis dans functions.php :
     newUsers();
 
 pagefooter();
 ?>
+<script>
+const element = document.getElementById('texteAGlisser');
+
+const positionFinale = 15;
+
+const vitesse = 100;
+
+const distanceTotale = element.parentNode.offsetWidth * (positionFinale / 100) - element.offsetLeft;
+
+const duree = Math.abs(distanceTotale / vitesse * 1000);
+
+element.style.position = 'relative';
+
+function glisserTexte() {
+  const tempsDebut = new Date().getTime();
+
+  function animer() {
+    const tempsMaintenant = new Date().getTime();
+    const tempsEcoule = tempsMaintenant - tempsDebut;
+
+    const positionActuelle = element.offsetLeft;
+    const deplacement = vitesse * (tempsEcoule / 1000);
+    const nouvellePosition = positionActuelle + deplacement;
+
+    element.style.left = nouvellePosition + 'px';
+
+    if ((deplacement > 0 && nouvellePosition < distanceTotale) || (deplacement < 0 && nouvellePosition > distanceTotale)) {
+      requestAnimationFrame(animer);
+    }
+  }
+
+  requestAnimationFrame(animer);
+}
+
+glisserTexte();
+</script>
+</body>
+</html>
