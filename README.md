@@ -1,3 +1,13 @@
 # SAE23-Website
-Benjamin1
-bonjour23
+
+## Contributors
+
+### Development team
+
+- Antoine DAVID
+- Victor COCARD
+- Benjamin FAURE
+
+### Reviewers
+
+- @frmenguy
