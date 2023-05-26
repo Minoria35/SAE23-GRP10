@@ -189,4 +189,71 @@
         session_destroy();
     }
 
+    function histoire(){
+        echo '<body>
+        <script type="text/javascript">
+              function changeCouleur(element) {
+                element.style.color = "white";
+                element.style.fontWeight = "bold";
+                element.style.backgroundColor = "black";
+                  
+            }
+        </script>
+        <br>
+        <div class="timeline">
+            <div align="center">
+                <div class="container"  >
+                    <article onmouseover = "changeCouleur(this)">
+                        <h2>Fondation de l\'entreprise</h2>
+                        <ul id="Fondation de lentreprise">
+                            <span>L\'entreprise est fondée par Jean-Louis Bonneau</span><br>
+                            <span>Date :</span> 15/03/2015 
+                        </ul>
+                    </article>
+                </div>
+                <img src="flechebas.png" width="50em">
+                <div class="container" id="acquisition">
+                    <article onmouseover = "changeCouleur(this)">';
+                       echo "<h2>Première acquisition</h2>
+                        <ul>
+                            <span>L'entreprise acquiert ...</span><br>
+                            <span>Date :</span> 22/09/2007 
+                        </ul>
+                    </article>
+                </div>";
+               echo '<img src="flechebas.png" width="50em">
+                <div class="container" id="nouvpre">
+                    <article onmouseover = "changeCouleur(this)">
+                        <h2>Nouveau président</h2>
+                        <ul>
+                            <span>David Gatel et François-Régis Menguy deviennent les nouveaux présidents de l\'entreprise</span><br>
+                            <span>Date :</span> 10/12/2012 
+                        </ul>
+                    </article>
+                </div>
+                <img src="flechebas.png" width="50em">
+                <div class="container" id="exp">
+                    <article onmouseover = "changeCouleur(this)">
+                        <h2>Expansion territoriale</h2>
+                        <ul>
+                            <span>L\'entreprise ouvre son premier magasin en Angleterre</span><br>
+                            <span>Date :</span> 30/03/2021 
+                        </ul>
+                    </article>
+                </div>
+                <img src="flechebas.png" width="50em">
+                <div class="container" id="ChangNom">
+                    <article onmouseover = "changeCouleur(this)">';
+                        echo "<h2>Changement de nom</h2>
+                        <ul>
+                            <span>L'entreprise change de nom pour devenir ...</span><br>
+                            <span>Date :</span> 10/05/2023 
+                        </ul>
+                    </article>
+                </div>";
+               echo "
+            </div>
+        </div>
+    </body>";
+    }
 ?>
