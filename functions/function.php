@@ -8,8 +8,9 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>'.$title.'</title>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="../js/to_top.js"></script>
             <link rel="stylesheet" href="../css/to_top.css">
         </head>
@@ -22,33 +23,35 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container-fluid sm-4">
                     <h1 class="display-4">' . $titre . '
-                        <div class="text-right"> <h4> Page : '. $pagephp .'</h4>
+                        <div class="d-flex justify-content-end"> <h4> Page : '. $pagephp .'</h4>
                         </div>
                     </h1>';
-                    if(isset($_SESSION['username']) && isset($_SESSION['role'])){
+                    if(isset($_SESSION['username']) && isset($_SESSION['roles'])){
                         //echo $_SESSION['username'] . ' (' . $_SESSION['role'] . ')';
-                        echo '<div class="connexion-header text-right">
-                        <a href="../functions/traitement_function/deconnexion.php" class="btn btn-outline-dark btn-sm">Se déconnecter</a>';
+                        echo '<div class="connexion-header d-flex justify-content-end">
+                        <a href="../functions/traitement_function/deconnexion.php" class="btn btn-outline-dark btn-sm">Se déconnecter</a>
+                        </div>';
                     }
                     else {
                         //echo $_SESSION['username'] . ' (' . $_SESSION['role'] . ')';
-                        echo '<div class="connexion-header text-right">
-                        <button class="btn btn-outline-dark btn-sm edit-cxs-user" data-bs-toggle="modal" data-bs-target="#edit-cxs-modal">Se connecter</button>';
+                        echo '<div class="connexion-header d-flex justify-content-end">
+                        <button class="btn btn-outline-dark btn-sm edit-cxs-user" data-bs-toggle="modal" data-bs-target="#edit-cxs-modal">Se connecter</button>
+                        </div>';
 
                         echo '
                             <div class="modal fade" id="edit-cxs-modal" aria-labelledby="editModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
-                                <div class="modal-content">
+                                <div class="modal-content container-fluid">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="editModalLabel">Connexion de l\'utilisateur</h5>
                                 </div>
                                 <form action="../functions/traitement_function/connexion.php" method="post">
                                     <div class="form-group">
-                                        <label for="username">Nom d\'utilisateur</label>
+                                        <h6 class="modal-title">Nom d\'utilisateur</h6>
                                         <input type="text" class="form-control" id="username" name="username" placeholder="Nom d\'utilisateur">
                                     </div>
                                     <div class="form-group">
-                                        <label for="password">Mot de passe</label>
+                                        <h6 class="modal-title">Mot de passe</h6>
                                         <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
                                     </div>
                                 <div class="modal-footer">
@@ -75,7 +78,7 @@
                             ';
 
                         }
-                        echo '</div>
+                        echo '<br>
                             </div>
                         </div>';
     }
@@ -92,10 +95,10 @@
                         <ul class="nav navbar-nav">
             ';
 
-        if($menu = fopen('.\data\menu.txt','r') == null){
-            $menu = fopen('..\data\menu.txt','r');
+        if(file_exists('./data/menu.txt')){
+            $menu = fopen('./data/menu.txt','r');
         }else{
-            $menu = fopen('.\data\menu.txt','r');
+            $menu = fopen('../data/menu.txt','r');
         }
         if ($menu){
             while (!feof($menu)){
@@ -105,26 +108,57 @@
                 $titre = $elements[1];
                 $lien = trim($elements[2]);
                 $role = trim($elements[3]);
-                if($role == "none"){
-                    if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
-                    ';} 
-                    else {
-                        echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
-                        ';
+
+                if(isset($_SESSION['roles'])){
+
+                    if($role == "none"){
+                        if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                        ';} 
+                        else {
+                            echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                            ';
+                        }
                     }
-                }elseif($role == "user" && isset($_SESSION['role']) && $_SESSION['role'] == "salarie"){
-                    if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
-                    ';} 
-                    else {
-                        echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
-                        ';
+                    
+                    foreach($_SESSION['roles'] as $roles){
+                        if($role == "salarie" && $roles == "salarie"){
+                            if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                            ';} 
+                            else {
+                                echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                                ';
+                            }
+                        }elseif($role == "manager" && $roles == "manager"){
+                            if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                            ';} 
+                            else {
+                                echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                                ';
+                            }
+                        }elseif($role == "direction" && $roles == "direction"){
+                            if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                            ';} 
+                            else {
+                                echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                                ';
+                            }
+                        }elseif($role == "admin" && $roles == "admin"){
+                            if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                            ';} 
+                            else {
+                                echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                                ';
+                            }
+                        }
                     }
-                }elseif($role == "admin" && isset($_SESSION['role']) && $_SESSION['role'] == "admin"){
-                    if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
-                    ';} 
-                    else {
-                        echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
-                        ';
+                }else{
+                    if($role == "none"){
+                        if($titre == $pactive_page){echo '<li class="active"><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                        ';} 
+                        else {
+                            echo '<li><a class="nav-link navbar-brand" href="' . $dossier . $lien . '">' . $titre . '</a></li>
+                            ';
+                        }
                     }
                 }
             }
@@ -152,7 +186,7 @@
                         <div class="col-sm-4">
                             <h4>Informations</h4>
                             <ul class="list-unstyled">
-                                <li><a href="#">Qui sommes-nous ?</a></li>
+                                <li><a href="../../qui_sommes_nous.php">Qui sommes-nous ?</a></li>
                                 <li><a href="#">Nous contacter</a></li>
                                 <li><a href="#">Mentions légales</a></li>
                             </ul>
@@ -165,16 +199,16 @@
 
     function connexion($username, $password){
         session_start();
-        $users = json_decode(file_get_contents('..\data\users.json'), true);
+        $users = json_decode(file_get_contents('../../data/users.json'), true);
         foreach($users as $user){
             if($user['username'] == $username){
                 if($user['password'] == null){
                     $_SESSION['username'] = $username;
-                    $_SESSION['role'] = $user['role'];
+                    $_SESSION['roles'] = $user['role'];
                     return true;
                 }elseif($user['password'] == password_verify($password, $user['password'])){
                     $_SESSION['username'] = $username;
-                    $_SESSION['role'] = $user['role'];
+                    $_SESSION['roles'] = $user['role'];
                     return true;
                 }else{
                     return false;
@@ -211,7 +245,7 @@
                         </ul>
                     </article>
                 </div>
-                <img src="flechebas.png" width="50em">
+                <img src="images/flechebas.png" width="50em">
                 <div class="container" id="acquisition">
                     <article onmouseover = "changeCouleur(this)">';
                        echo "<h2>Première acquisition</h2>
@@ -221,7 +255,7 @@
                         </ul>
                     </article>
                 </div>";
-               echo '<img src="flechebas.png" width="50em">
+               echo '<img src="images/flechebas.png" width="50em">
                 <div class="container" id="nouvpre">
                     <article onmouseover = "changeCouleur(this)">
                         <h2>Nouveau président</h2>
@@ -231,7 +265,7 @@
                         </ul>
                     </article>
                 </div>
-                <img src="flechebas.png" width="50em">
+                <img src="images/flechebas.png" width="50em">
                 <div class="container" id="exp">
                     <article onmouseover = "changeCouleur(this)">
                         <h2>Expansion territoriale</h2>
@@ -241,7 +275,7 @@
                         </ul>
                     </article>
                 </div>
-                <img src="flechebas.png" width="50em">
+                <img src="images/flechebas.png" width="50em">
                 <div class="container" id="ChangNom">
                     <article onmouseover = "changeCouleur(this)">';
                         echo "<h2>Changement de nom</h2>

@@ -7,7 +7,7 @@
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
     $email = $_POST['email'];
-    $role = $_POST['role'];
+    $roles = $_POST['role'];
 
     /*var_dump($username);
     var_dump($password);
@@ -40,7 +40,7 @@
             'username' => $username,
             'password' => $password,
             'email' => $email,
-            'role' => $role
+            'role' => $roles
         );
         
         array_push($json, $new_user);

@@ -1,9 +1,9 @@
 <?php
     include '..\functions\function.php';
     include '..\functions\admin_function.php';
-    setup('admin');
-    pageheader('admin', '.\Intranet\admin.php');
-    navbar('.\Intranet\admin.php');
+    setup('Admin');
+    pageheader('Admin', '.\Intranet\admin.php');
+    navbar('Admin');
 
     showUsers();
 ?>
@@ -17,7 +17,7 @@
             <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe"> <br>
             <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirmer le mot de passe"> <br>
             <input type="email" class="form-control" id="email" name="email" placeholder="Email"> <br>
-            <select id="role" name="role" class="form-control"> <br>
+            <select id="role" name="role[]" class="form-control" multiple> <br>
                 <option value="admin">Admin</option>
                 <option value="direction">Direction</option>
                 <option value="managers">Managers</option>

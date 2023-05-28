@@ -1,14 +1,28 @@
 [
     {
         "username": "admin",
-        "password": "$2y$10$pzfd8Ig3Cl9hEjEIGRjDHOTey30hnJhbV23Bx21LyVKeqtMove54C",
-        "email": "",
-        "role": "admin"
+        "password": "$2y$10$X5y12.4.L3bLujx.Cz6yGeQD9xGxXT7xyfdLUnDYX6hDDIRbI49Xe",
+        "email": "admin@admin.fr",
+        "role": [
+            "salarie",
+            "admin"
+        ]
     },
     {
         "username": "user",
-        "password": "$2y$10$21D5iu9zdfUbbnqlU4zzXeJ4ycyyG\/Zbs7FjnsKqUqyt3jL\/3g6Le",
-        "email": "user@user.fr",
-        "role": "user"
+        "password": "$2y$10$3hr1rcW54n9Y.XDqssjN9.ISr3bHM\/TFSMcZlIn25tklz90XynKNe",
+        "email": "",
+        "role": [
+            "salarie"
+        ]
+    },
+    {
+        "username": "antoidavid",
+        "password": "$2y$10$92Zi9Ut8SHBJGVrSagXYBe2BXN7R5Qkbu3q0YOdgFK5gHuAYMNKT2",
+        "email": "antoine.david.2@etudiant.univ-rennes1.fr",
+        "role": [
+            "salarie",
+            "direction"
+        ]
     }
 ]

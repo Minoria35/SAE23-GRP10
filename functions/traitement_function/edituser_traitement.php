@@ -6,7 +6,7 @@
     $password1 = $_POST['password'];
     $password2 = $_POST['password2'];
     $email = $_POST['email'];
-    $role = $_POST['role'];
+    $roles = $_POST['role'];
 
     if($password1 != $password2){
         echo '<div class="alert alert-danger" role="alert">
@@ -26,7 +26,7 @@
                 'username' => $username,
                 'password' => password_hash($password, PASSWORD_DEFAULT),
                 'email' => $email,
-                'role' => $role
+                'role' => $roles
             );
             $updated_users[] = $updated_user; 
         } else {
