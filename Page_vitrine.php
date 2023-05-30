@@ -14,7 +14,7 @@ pagenavbar($pageactive);
   <h2 id="texteAGlisser">Présentation de l'entreprise</h2>
   <br>
 <div class=container>
-  <h3 id="texteAGlisser">Qui sommes-nous ?</h3>
+  <h3>Qui sommes-nous ?</h3>
   <br>
   <p>
 
