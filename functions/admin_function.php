@@ -19,10 +19,10 @@
             echo '<tr>
                     <td>' . $username . '</td>
                     <td>' . $user['password'] . '</td>
-                    <td>' . $user['role'] . '</td>
+                    <td>' . implode(",<br> ",$user['role']) . '</td>
                     <td>
                         <button type="button" class="btn btn-primary edit-user-btn" data-bs-toggle="modal" data-bs-target="#edit-user-modal" data-username="' . $username . '">Modifier</button>
-                        <a href="../functions/traitement_function/delete_user.php?username=' . $username . '">Supprimer</a>
+                        <a href="../functions/traitement_function/delete_user.php?username=' . $username . '" class="btn btn-danger btn-sm">Supprimer</a>
                     </td>
                 </tr>';
         }
@@ -58,7 +58,7 @@
                   </div>
                   <div class="form-group">
                     <label for="role">Rôle</label>
-                    <select class="form-control" id="role" name="role">
+                    <select class="form-control" id="role" name="role[]" multiple>
                       <option value="salarie">Salarié</option>
                       <option value="managers">Managers</option>
                       <option value="direction">Direction</option>
