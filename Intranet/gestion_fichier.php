@@ -11,7 +11,7 @@
             <h1>Gestionnaire de fichiers</h1>
         </div>
     </div>
-    <!--<div class="row">
+    <!--<div class="row"> Formulaire de dépôt de fichier basique
         <div class="col-sm-12">
             <h2>Déposer un fichier</h2>
             <form action="../functions/traitement_function/upload.php" method="post" enctype="multipart/form-data">
@@ -165,7 +165,7 @@
 
 <script>
     $(document).ready(function() {
-        // Fonction pour charger le contenu de la page externe
+        // Fonction pour charger le contenu de la page externe de visualisation en AJAX
         function loadExternalContent(url) {
             $.ajax({
                 url: url,
