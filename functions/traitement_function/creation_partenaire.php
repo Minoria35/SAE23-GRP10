@@ -8,7 +8,7 @@ if (empty($creation_partenaire)) {
     exit();
 }
 addPartner($creation_partenaire);
-header('Location: page07.php');
+header('Location: ..\Intranet\gestion_partner.php');
 exit();
 
 
