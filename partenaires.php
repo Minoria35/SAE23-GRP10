@@ -6,7 +6,7 @@ setup('Partenaires');
 pageheader('Partenaires', './partenaires.php');
 navbar('Partenaires');
 
-}
+
 ?>
 
 <br>
