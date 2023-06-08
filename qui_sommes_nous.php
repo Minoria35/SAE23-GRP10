@@ -73,7 +73,7 @@ Chez Plaprêt, nous nous engageons à faire don d\'au moins 500 plats prêts à 
     }
 }
 echo "<div class='text-center'>";
-echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';;
+echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';
     afficherAnnuaire();
     echo "</div>";
 ?>
@@ -85,7 +85,7 @@ echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';;
 
 
 
-<div id="formulaire" style="display: none;">
+<div id="formulaire" action="ajouter_traitement.php" style="display: none;">
     <form method="POST">
         <label for="prenom">Prénom :</label>
         <input type="text" id="prenom" name="prenom"><br><br>
@@ -102,50 +102,29 @@ echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';;
 
 <script>
     function AjouterPersonne() {
-        document.getElementById("formulaire").style.display = "block";
-    }
+        var formulaire = document.getElementById("formulaire");
+            if (formulaire.style.display === "none") {
+                formulaire.style.display = "block";
+            } else {
+                formulaire.style.display = "none";
+            }
+        }
+    
 </script>
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-    $photo = $_POST['photo'];
-
-    // Vérifier si tous les champs sont remplis
-    if (!empty($prenom) && !empty($nom) && !empty($photo)) {
-        // Charger les données existantes du fichier JSON
-        $jsonFile = file_get_contents('./data/annuaire.json');
-        $annuaire = json_decode($jsonFile, true);
-
-        // Créer un nouvel enregistrement
-        $nouvellePersonne = array(
-            'prenom' => $prenom,
-            'nom' => $nom,
-            'photo' => $photo
-        );
-
-        // Ajouter la nouvelle personne à l'annuaire
-        $annuaire[] = $nouvellePersonne;
-
-        // Convertir l'annuaire en format JSON
-        $nouveauJson = json_encode($annuaire, JSON_PRETTY_PRINT);
-
-        // Écrire le nouveau JSON dans le fichier
-        file_put_contents('./data/annuaire.json', $nouveauJson);
-
-    }
-}
-
-?>
 
 <script>
     function ModifierPersonne() {
-        document.getElementById("formulaire1").style.display = "block";
-    }
+        var formulaire1 = document.getElementById("formulaire1");
+            if (formulaire1.style.display === "none") {
+                formulaire1.style.display = "block";
+            } else {
+                formulaire1.style.display = "none";
+            }
+        }
 </script>
 
-<div id="formulaire1" style="display: none;">
+<div id="formulaire1" action="modifier_traitement.php" style="display: none;">
     <form method="POST">
         <label for="prenom">Prénom :</label>
         <input type="text" id="prenom" name="prenom"><br><br>
@@ -169,47 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </div>
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les valeurs du formulaire
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-    $photo = $_POST['photo'];
-    $nouveauPrenom = $_POST['nouveauPrenom'];
-    $nouveauNom = $_POST['nouveauNom'];
-    $nouvellePhoto = $_POST['nouvellePhoto'];
-
-    // Vérifier si tous les champs sont remplis
-    if (!empty($prenom) && !empty($nom) && !empty($nouveauPrenom) && !empty($nouveauNom) && !empty($nouvellePhoto)) {
-        // Charger les données existantes du fichier JSON
-        $jsonFile = file_get_contents('./data/annuaire.json');
-        $annuaire = json_decode($jsonFile, true);
-
-        // Parcourir l'annuaire pour trouver la personne à modifier
-        foreach ($annuaire as &$personne) {
-            if ($personne['prenom'] === $prenom && $personne['nom'] === $nom) {
-                // Modifier les données de la personne
-                $personne['prenom'] = $nouveauPrenom;
-                $personne['nom'] = $nouveauNom;
-                $personne['photo'] = $nouvellePhoto;
-                break;
-            }
-        }
-
-        // Convertir l'annuaire en format JSON
-        $nouveauJson = json_encode($annuaire, JSON_PRETTY_PRINT);
-
-        // Écrire le nouveau JSON dans le fichier
-        file_put_contents('./data/annuaire.json', $nouveauJson);
-
-
-        // Réinitialiser le formulaire et masquer le formulaire
-        echo '<script>document.querySelector("form").reset(); document.getElementById("formulaire").style.display = "none";</script>';
-    }
-}
-?>
-
-<div id="formulaire2" style="display: none;">
+<div id="formulaire2" action="supprimer_traitement.php" style="display: none;">
 <form method="POST">
     <label for="prenom">Prénom :</label>
     <input type="text" id="prenom" name="prenom"><br><br>
@@ -223,39 +162,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <script>
     function SupprimerPersonne() {
-        document.getElementById("formulaire2").style.display = "block";
-    }
-</script>
-
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-
-    if (!empty($prenom) && !empty($nom)) {
-        // Charger les données existantes du fichier JSON
-        $jsonFile = file_get_contents('./data/annuaire.json');
-        $annuaire = json_decode($jsonFile, true);
-
-        // Parcourir l'annuaire pour trouver la personne à supprimer
-        foreach ($annuaire as $index => $personne) {
-            if ($personne['prenom'] === $prenom && $personne['nom'] === $nom) {
-                // Supprimer la personne du tableau
-                unset($annuaire[$index]);
-                break;
+        var formulaire2 = document.getElementById("formulaire2");
+            if (formulaire2.style.display === "none") {
+                formulaire2.style.display = "block";
+            } else {
+                formulaire2.style.display = "none";
             }
         }
-
-        // Réindexer le tableau après la suppression
-        $annuaire = array_values($annuaire);
-
-        // Convertir l'annuaire en format JSON
-        $nouveauJson = json_encode($annuaire, JSON_PRETTY_PRINT);
-
-        // Écrire le nouveau JSON dans le fichier
-        file_put_contents('./data/annuaire.json', $nouveauJson);
-
-    }
-}
-?>
+</script>
 </div>
