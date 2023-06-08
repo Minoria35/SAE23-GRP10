@@ -1,5 +1,5 @@
 <?php
-include 'functions.php';
+include '..\admin_function.php';
 $suppression_partenaire = $_POST['partenaire_suppr'];
 echo $suppression_partenaire;
 if (empty($suppression_partenaire)) {
