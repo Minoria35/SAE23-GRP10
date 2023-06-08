@@ -1,8 +1,7 @@
 <?php
 include 'functions.php';
-$titre = "Bibliothèque numérique";
 $pageactive = "";
-setup("Liste des utilisateurs");
+setup("Liste des partenaires");
 pageheader($titre);
 pagenavbar($pageactive);
 if (!authentifie()) {
@@ -11,28 +10,24 @@ if (!authentifie()) {
 ?>
 
 <br>
-    <h1 class="my-4 text-center">Liste des utilisateurs</h1 >
+    <h1 class="my-4 text-center">Liste des partenaires</h1 >
 
     <div class="container">
         <div class="row">
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Utilisateur</th>
-                        <th scope="col">Mot de passe</th>
-                        <th scope="col">Rôle</th>
+                        <th scope="col">Partenaire</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
-                    $users = json_decode(file_get_contents("data/users.json"), true);
-                    foreach ($users as $user) {
+                    $partenaires = json_decode(file_get_contents("data/partenaires.json"), true);
+                    foreach ($partenaires as $user) {
                     ?>
                         <tr>
-                            <td><?php echo $user['user'] ?></td>
-                            <td><?php echo $user['mdp'] ?></td>
-                            <td><?php echo implode(" ",$user['role']) ?></td>
+                            <td><?php echo $user['partenaire'] ?></td>
                         </tr>
                     <?php
                     }

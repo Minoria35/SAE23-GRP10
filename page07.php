@@ -1,9 +1,8 @@
 <?php
 include 'functions.php';
 
-$titre = "Bibliothèque numérique";
 $pageactive = "";
-setup("Page de gestion des utilisateurs");
+setup("Page de gestion des partenaires");
 pageheader($titre);
 pagenavbar($pageactive);
 
@@ -23,32 +22,24 @@ else {
 
 <head>
   <meta charset="utf-8">
-  <title>Ajout d'utilisateur</title>
+  <title>Ajout de partenaire</title>
 </head>
 <body>
 <div class="sidenav">
   <div class="login-main-text">
   <br>
-    <h4>Entrez le nom d'utilisateur et le mot de passe que vous souhaitez créer :</h4>
+    <h4>Entrez le nom du partenaire que vous souhaitez créer :</h4>
   </div>
 </div>
 <div class="main">
   <div class="col-md-6 col-sm-12">
     <div class="login-form">
-      <form action="creation_utilisateur.php" method="post">
+      <form action="creation_partenaire.php" method="post">
         <div class="form-group">
-          <label for="user">Utilisateur</label>
-          <input type="text" class="form-control" name="user" id="user" placeholder="Utilisateur">
+          <label for="partenaire">Partenaire</label>
+          <input type="text" class="form-control" name="partenaire" id="partenaire" placeholder="Nom du partenaire à rentrer ici">
         </div>
-        <div class="form-group">
-          <label for="mdp">Mot de passe</label>
-          <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Mot de passe">
-        </div>
-        <div class="form-group">
-          <label for="role">Rôle</label>
-          <input type="text" class="form-control" name="role" id="role" placeholder="Utilisateur">
-        </div>
-        <button type="submit" class="btn btn-black">Créer l'utilisateur</button>      
+        <button type="submit" class="btn btn-black">Créer le partenaire</button>      
       </form>
     </div>
   </div>
@@ -56,14 +47,14 @@ else {
 <div class="main">
   <div class="col-md-6 col-sm-12">
     <div class="login-form">
-      <form action="suppression_utilisateur.php" method="post">
+      <form action="suppression_partenaire.php" method="post">
         <div class="form-group">
         <br>
-        <h3>Si vous souhaitez supprimer un utilisateur, saisissez son nom d'utilisateur ci-dessous :</h3>
-          <label for="user_suppr">Utilisateur</label>
-          <input type="text" class="form-control" name="user_suppr" id="user_suppr" placeholder="Utilisateur">
+        <h3>Si vous souhaitez supprimer un partenaire, saisissez son nom ci-dessous :</h3>
+          <label for="partenaire_suppr">Partenaire</label>
+          <input type="text" class="form-control" name="partenaire_suppr" id="partenaire_suppr" placeholder="Nom du partenaire à supprimer ici">
         </div>
-        <button type="submit" class="btn btn-black">Supprimer l'utilisateur</button>      
+        <button type="submit" class="btn btn-black">Supprimer le partenaire</button>      
       </form>
       </div>
       </div>
