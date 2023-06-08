@@ -321,6 +321,6 @@ function wiki(){
         echo "<p>L'annuaire de l'entreprise est disponible dans l'intranet et affiche les informations de contact de tous les salariés de l'entreprise. Les utilisateurs peuvent accéder à l'annuaire complet, qui comprend un minimum de 30 personnes, pour trouver facilement les coordonnées de leurs collègues. De plus, les données de l'annuaire sont utilisées pour mettre à jour automatiquement la partie 'Qui sommes-nous ?' du site vitrine.</p>";
 
         echo "<h2>Gestion des partenaires</h2>";
-        echo "<p>La fonctionnalité de gestion des partenaires permet aux utilisateurs de l'intranet de gérer les informations relatives à nos partenaires. Ils peuvent télécharger et gérer les logos des partenaires, ainsi que fournir des informations détaillées et des commentaires sur chaque partenariat.</p>";
+        echo "<p>La fonctionnalité de gestion des partenaires permet aux utilisateurs de l'intranet de gérer les informations relatives à nos partenaires. Ils peuvent télécharger et gérer les logos des partenaires, ainsi que fournir des informations détaillées et des commentaires sur chaque partenariat.</p> </div>";
     }
 ?>

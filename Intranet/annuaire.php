@@ -1,7 +1,14 @@
 <?php 
+
+include "../functions/function.php";
+
+setup("Annuaire");
+pageheader("Annuaire", "../Intranet/annuaire.php");
+navbar("Annuaire");
+
 function afficherAnnuaire() {
     // Chemin du fichier annuaire JSON
-    $cheminFichier = './data/annuaire.json';
+    $cheminFichier = '../data/annuaire.json';
 
     // Lire le contenu du fichier JSON
     $contenuFichier = file_get_contents($cheminFichier);
@@ -127,3 +134,7 @@ echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';
         }
 </script>
 </div>
+
+<?php
+footer();
+?>

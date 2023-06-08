@@ -1,10 +1,10 @@
 <?php
+include 'functions/function.php';
 include 'functions\admin_function.php';
 setup('Partenaires');
 pageheader('Partenaires', './partenaires.php');
 navbar('Partenaires');
 
-}
 ?>
 
 <br>
@@ -33,3 +33,8 @@ navbar('Partenaires');
                 </tbody>
             </table>
         </div>
+    </div>
+
+<?php
+footer();
+?>
