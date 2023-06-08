@@ -5,8 +5,8 @@ include '../functions/admin_function.php';
 
 $pageactive = "";
 setup("Page de gestion des partenaires");
-pageheader($titre, "../Intranet/gestion_partner.php");
-    navbar("Gestionnaire des partenaires");
+pageheader("Gestion des partenaires", "../Intranet/gestion_partner.php");
+    navbar("Gestion des partenaires");
 ?>
 <!doctype html>
 <html lang="fr">
