@@ -1,4 +1,4 @@
-<?php
+<?php 
 function afficherAnnuaire() {
     // Chemin du fichier annuaire JSON
     $cheminFichier = './data/annuaire.json';
@@ -22,7 +22,7 @@ function afficherAnnuaire() {
         $prenom = $personne['prenom'];
 
         echo '<div class="person">';
-        echo '<img src="' . $photo . '" alt="Photo" width="100" height="100">';
+        echo '<img src="' . $photo . '.png" alt="Photo" width="100" height="100">';
         echo '<h3>' . $prenom . ' ' . $nom . '</h3>';
         echo '<hr>';
         echo '</div>';
@@ -41,8 +41,8 @@ echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';
 
 
 
-<div id="formulaire" action="ajouter_traitement.php" style="display: none;">
-    <form method="POST">
+<div id="formulaire" style="display: none;">
+    <form action="./functions/traitement_function/ajouter_traitement.php" method="POST">
         <label for="prenom">Prénom :</label>
         <input type="text" id="prenom" name="prenom"><br><br>
 
@@ -80,8 +80,8 @@ echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';
         }
 </script>
 
-<div id="formulaire1" action="modifier_traitement.php" style="display: none;">
-    <form method="POST">
+<div id="formulaire1" style="display: none;">
+    <form action="./functions/traitement_function/modifier_traitement.php" method="POST">
         <label for="prenom">Prénom :</label>
         <input type="text" id="prenom" name="prenom"><br><br>
 
@@ -104,8 +104,8 @@ echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';
     </form>
 </div>
 
-<div id="formulaire2" action="supprimer_traitement.php" style="display: none;">
-<form method="POST">
+<div id="formulaire2" style="display: none;">
+<form action="./functions/traitement_function/supprimer_traitement.php" method="POST">
     <label for="prenom">Prénom :</label>
     <input type="text" id="prenom" name="prenom"><br><br>
 
