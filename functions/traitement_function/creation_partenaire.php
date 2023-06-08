@@ -1,5 +1,5 @@
 <?php
-include 'functions.php';
+include '..\admin_function.php';
 $creation_partenaire = $_POST['partenaire'];
 
 if (empty($creation_partenaire)) {
