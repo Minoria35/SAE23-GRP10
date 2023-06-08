@@ -77,3 +77,6 @@ echo '<h1>' . 'Annuaire de l\'entreprise' . '</h1>';
     afficherAnnuaire();
     echo "</div>";
 ?>
+<?php
+footer();
+?>
