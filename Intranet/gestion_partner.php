@@ -23,7 +23,7 @@ pageheader($titre, "../Intranet/gestion_partner.php");
 <div class="main">
   <div class="col-md-6 col-sm-12">
     <div class="login-form">
-      <form action="creation_partenaire.php" method="post">
+      <form action="../functions/traitement_function/creation_partenaire.php" method="post">
         <div class="form-group">
           <label for="partenaire">Partenaire</label>
           <input type="text" class="form-control" name="partenaire" id="partenaire" placeholder="Nom du partenaire à rentrer ici">
