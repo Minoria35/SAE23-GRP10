@@ -4,8 +4,6 @@ setup('Partenaires');
 pageheader('Partenaires', './partenaires.php');
 navbar('Partenaires');
 
-if (!authentifie()) {
-    header('Location: connexion_user.php');
 }
 ?>
 
