@@ -1,5 +1,6 @@
 <?php
 include 'functions\admin_function.php';
+include 'functions\function.php';
 
 $pageactive = "";
 setup("Page de gestion des partenaires");
