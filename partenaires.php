@@ -1,6 +1,8 @@
 <?php
 include 'functions/function.php';
 include 'functions\admin_function.php';
+include 'functions\function.php';
+
 setup('Partenaires');
 pageheader('Partenaires', './partenaires.php');
 navbar('Partenaires');
@@ -8,7 +10,7 @@ navbar('Partenaires');
 ?>
 
 <br>
-    <h1 class="my-4 text-center">Liste des partenaires</h1 >
+    <h1 class="my-4 text-center">Liste des partenaires</h1>
 
     <div class="container">
         <div class="row">
