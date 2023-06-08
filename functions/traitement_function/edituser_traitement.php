@@ -22,6 +22,16 @@
     foreach($json as $user){
         if($user['username'] == $username){
             
+            if ($password == null){
+                $password = $user['password'];
+            }
+            if ($email == null){
+                $email = $user['email'];
+            }
+            if ($roles == null){
+                $roles = $user['role'];
+            }
+
             $updated_user = array(
                 'username' => $username,
                 'password' => password_hash($password, PASSWORD_DEFAULT),

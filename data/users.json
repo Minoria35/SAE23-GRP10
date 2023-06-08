@@ -1,10 +1,12 @@
 [
     {
         "username": "admin",
-        "password": "$2y$10$X5y12.4.L3bLujx.Cz6yGeQD9xGxXT7xyfdLUnDYX6hDDIRbI49Xe",
+        "password": "$2y$10$chS.gbWgzDhLKbQNQg6JJe8KxZk0i2ciNY6a.yqswSgheHCTeqn6m",
         "email": "admin@admin.fr",
         "role": [
             "salarie",
+            "managers",
+            "direction",
             "admin"
         ]
     },
@@ -18,10 +20,11 @@
     },
     {
         "username": "antoidavid",
-        "password": "$2y$10$92Zi9Ut8SHBJGVrSagXYBe2BXN7R5Qkbu3q0YOdgFK5gHuAYMNKT2",
+        "password": "$2y$10$dhpkxHToUm4bOI2kjRlng.BmFSmCf\/5ZuMUA87BZeSd6ZclM7gZQm",
         "email": "antoine.david.2@etudiant.univ-rennes1.fr",
         "role": [
             "salarie",
+            "managers",
             "direction"
         ]
     }
