@@ -290,4 +290,37 @@
         </div>
     </body>";
     }
+function wiki(){
+        echo "<div class='container'>";
+        echo "<h1>Wiki</h1><br>";
+        echo "<h2><strong>Site Vitrine</strong></h2>";
+        echo "<h2>Accueil</h2>";
+        echo "<p>La page d'accueil du site présente une description complète de l'entreprise. Vous y trouverez des informations sur notre mission, nos valeurs et nos objectifs.</p>";
+
+        echo "<h2>Qui sommes-nous ?</h2>";
+        echo "<p>La page 'Qui sommes-nous ?' présente notre entreprise en détail. Vous y trouverez des informations sur nos dirigeants et les membres clés de notre équipe. Nous mettons en avant notre expertise et notre expérience pour vous donner une idée précise de notre entreprise et de notre équipe.</p>";
+
+        echo "<h2>Histoire</h2>";
+        echo "<p>La page 'Histoire' retrace l'évolution de notre entreprise au fil du temps. Elle met en évidence les moments clés de notre parcours, tels que les changements de présidence, les acquisitions d'entreprises et le développement de nos sites géographiques.</p>";
+
+        echo "<h2>Activités</h2>";
+        echo "<p>La page 'Activités' présente les différentes activités que nous proposons en tant qu'entreprise. Nous détaillons nos services et nos domaines d'expertise, vous permettant ainsi de comprendre en quoi nous pouvons répondre à vos besoins spécifiques.</p>";
+
+        echo "<h2>Partenaires</h2>";
+        echo "<p>Sur la page 'Partenaires', nous mettons en avant les logos de nos partenaires, accompagnés de commentaires sur nos collaborations.</p>";
+
+
+        echo "<h2><strong>Intranet</strong></h2>";
+        echo "<h2>Portail de connexion</h2>";
+        echo "<p>Le portail de connexion de l'intranet est réservé aux salariés de notre entreprise. Il offre une interface sécurisée pour gérer les utilisateurs, les profils associés et les appartenances aux différents groupes. Les salariés peuvent se connecter en utilisant leurs identifiants personnels pour accéder à des fonctionnalités spécifiques à leur rôle.</p>";
+
+        echo "<h2>Gestionnaire de fichiers</h2>";
+        echo "<p>Le gestionnaire de fichiers de l'intranet permet aux utilisateurs autorisés de gérer les fichiers de manière sécurisée. Selon les droits des groupes d'utilisateurs, ils peuvent ajouter, supprimer et visualiser les fichiers. Nous avons mis en place une structure basée sur quatre groupes minimum : admin, salariés, managers et direction, ainsi qu'un groupe personnel.</p>";
+
+        echo "<h2>Annuaire</h2>";
+        echo "<p>L'annuaire de l'entreprise est disponible dans l'intranet et affiche les informations de contact de tous les salariés de l'entreprise. Les utilisateurs peuvent accéder à l'annuaire complet, qui comprend un minimum de 30 personnes, pour trouver facilement les coordonnées de leurs collègues. De plus, les données de l'annuaire sont utilisées pour mettre à jour automatiquement la partie 'Qui sommes-nous ?' du site vitrine.</p>";
+
+        echo "<h2>Gestion des partenaires</h2>";
+        echo "<p>La fonctionnalité de gestion des partenaires permet aux utilisateurs de l'intranet de gérer les informations relatives à nos partenaires. Ils peuvent télécharger et gérer les logos des partenaires, ainsi que fournir des informations détaillées et des commentaires sur chaque partenariat.</p>";
+    }
 ?>
