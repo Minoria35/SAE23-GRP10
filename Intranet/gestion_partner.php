@@ -1,12 +1,11 @@
 <?php
 
-include "../functions/function.php";
-include '../functions/admin_function.php';
+include '..\functions\admin_function.php';
+include '..\functions\function.php';
 
-$pageactive = "";
 setup("Page de gestion des partenaires");
 pageheader("Gestion des partenaires", "../Intranet/gestion_partner.php");
-    navbar("Gestion des partenaires");
+    navbar("Gestionnaire des partenaires");
 ?>
 <!doctype html>
 <html lang="fr">
@@ -38,7 +37,7 @@ pageheader("Gestion des partenaires", "../Intranet/gestion_partner.php");
 <div class="main">
   <div class="col-md-6 col-sm-12">
     <div class="login-form">
-      <form action="suppression_partenaire.php" method="post">
+      <form action="../functions/traitement_function/suppression_partenaire.php" method="post">
         <div class="form-group">
         <br>
         <h3>Si vous souhaitez supprimer un partenaire, saisissez son nom ci-dessous :</h3>
