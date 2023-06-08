@@ -8,7 +8,7 @@ navbar('Partenaires');
 ?>
 
 <br>
-    <h1 class="my-4 text-center">Liste des partenaires</h1 >
+    <h1 class="my-4 text-center">Liste des partenaires</h1>
 
     <div class="container">
         <div class="row">
