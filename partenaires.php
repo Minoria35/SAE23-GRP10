@@ -1,7 +1,6 @@
 <?php
 include 'functions/function.php';
 include 'functions\admin_function.php';
-include 'functions\function.php';
 
 setup('Partenaires');
 pageheader('Partenaires', './partenaires.php');
