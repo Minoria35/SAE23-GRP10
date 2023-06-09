@@ -22,10 +22,13 @@
         echo '<body>
             <div class="jumbotron jumbotron-fluid">
                 <div class="container-fluid sm-4">
-                    <h1 class="display-4">' . $titre . '
+                    <div class="d-flex justify-content-start">
+                        <a href="../index.php"><img src="../images/plapret.png" alt="logo" width="30%"></a>
+                        <h1 class="display-4">' . $titre . '
                         <div class="d-flex justify-content-end"> <h4> Page : '. $pagephp .'</h4>
                         </div>
-                    </h1>';
+                    </h1>
+                    </div>';
                     if(isset($_SESSION['username']) && isset($_SESSION['roles'])){
                         //echo $_SESSION['username'] . ' (' . $_SESSION['role'] . ')';
                         echo '<div class="connexion-header d-flex justify-content-end">
