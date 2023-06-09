@@ -1,3 +1,9 @@
+<?php
+include 'functions\function.php';
+setup('Avis');
+pageheader('Avis', './avis.php');
+navbar('Avis');
+?>
 <!DOCTYPE html>
 <html>
 <head>
