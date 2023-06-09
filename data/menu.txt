@@ -1,0 +1,10 @@
+/;Accueil;index.php;none
+/;Qui sommes-nous;qui_sommes_nous.php;none
+/;Histoire;histoire.php;none
+/;Activités;activites.php;none
+/;Partenaires;partenaires.php;none
+/Intranet/;Admin;admin.php;admin
+/Intranet/;Gestionnaire de fichier;gestion_fichier.php;salarie
+/Intranet/;Annuaire;annuaire.php;salarie
+/Intranet/;Gestion des partenaires;gestion_partner.php;direction
+/Intranet/;Wiki;wiki.php;salarie

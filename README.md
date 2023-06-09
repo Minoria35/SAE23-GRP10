@@ -6,6 +6,7 @@
 
 - Antoine DAVID
 - Victor COCARD
+- Benjamin FAURE
 
 ### Reviewers
 
