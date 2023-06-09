@@ -93,20 +93,29 @@ function addPartner($partenaire) {
 
     $file = '../../data/partenaires.json';
     $json = file_get_contents($file);
+    //Décodage du contenu du fichiet json dans un tableau
     $users = json_decode($json, true);
+    //Ajout du nouveau partenaire dans le tableau
     $users[$partenaire] = [
         "partenaire" => $partenaire
     ];
+    //Rencodage du tableau en json
     $json = json_encode($users);
+    //Écriture dans le fichier json avec l'élément en plus
     file_put_contents($file, $json);
 }
 
 function deletePartner($partenaire_suppr) {
     $file = '../../data/partenaires.json';
+    //Lecture du fichier json
     $json = file_get_contents($file);
+    //Décodage du fichier json
     $users = json_decode($json, true);
+    // Suppression du partenaire spécifié du tableau
     unset($users[$partenaire_suppr]);
+    //Rencodage du fichier json après avoir supprimé l'élément
     $json = json_encode($users);
+    //Écriture dans le fichier json avec l'élément en moins
     file_put_contents($file, $json);
 }
 
