@@ -22,9 +22,6 @@ navbar('Avis');
       background-size: cover;
     }
 
-    .avis {
-      margin-bottom: 20px;
-    }
   </style>
 </head>
 <body>
@@ -41,11 +38,12 @@ navbar('Avis');
       { notation: 5, commentaire: "Le meilleur service que j'ai jamais utilisé, je suis entièrement satisfait !" }
     ];
 
+    //Récupère l'élément HTML avis-container
     const avisContainer = document.getElementById('avis-container');
 
+    // Parcours de chaque avis dans le tableau
     avis.forEach(function(avis) {
       const avisElement = document.createElement('div');
-      avisElement.classList.add('avis');
       avisElement.style.marginBottom = '50px';
 
       const etoilesElement = document.createElement('div');
@@ -60,7 +58,9 @@ navbar('Avis');
       avisElement.appendChild(etoilesElement);
 
       const commentaireElement = document.createElement('p');
+      //Récupération du commentaire
       commentaireElement.textContent = avis.commentaire;
+      //Ajout du commentaire à avisElement
       avisElement.appendChild(commentaireElement);
 
       avisContainer.appendChild(avisElement);
